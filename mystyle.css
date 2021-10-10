@@ -1,6 +1,11 @@
+body {
+  background-color: #EEEEEE;
+}
+
 ul {
+  width: 90%;
+  margin:0 auto;
   list-style-type: none;
-  margin: 0;
   padding: 0;
   overflow: hidden;
   border: 1px solid #e7e7e7;
@@ -44,6 +49,17 @@ li a:hover {
 #content {
 	width: 80%;
 	margin:0 auto;
+}
+
+#inside {
+  width: 90%;
+  background-color: white;
+  margin:0 auto;
+}
+
+#logo {
+  width: 90%;
+  margin:0 auto;
 }
 
 kontakt {
