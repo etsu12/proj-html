@@ -1,0 +1,52 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  color: #666;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/*po najechaniu kolor zmienia się na czarny*/
+li a:hover { 
+  background-color: #666; 
+}
+
+.aktywny {
+	background-color: #04AA6D;
+	color: white;
+}
+
+.kolumna {
+	float: left;
+	width: 33.33%;
+	text-align: center;
+}
+
+.wiersz:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#content {
+	width: 80%;
+	margin:0 auto;
+}
+
+kontakt {
+	font-size: 28px;
+	font-weight: bold;
+}
