@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset = "utf-8">
+<link rel="stylesheet" href="mystyle.css">
+
+<title>Strona główna</title>
+</head>
+
+<body>
+    <div id="logo">
+        <a href="main.html">
+          <img src="logo-placeholder.png" alt="Strona główna" style="width:500px;height:100px;">
+        </a>
+      </div>
+      <div>
+      <ul>
+        <li><a href="main.html">Strona główna</a></li>
+        <li><a href="aktualnosci.html">Aktualności</a></li>
+        <li><a class="aktywny" href="galeria.html">Galeria</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      </div>
+      
+          <div id="inside">
+              <div id="content">
+                  <br><br>
+                 <div class="container">
+                    <div class="slajdy">
+                        <div class="numertekst">1 / 6</div>
+                        <img src="zdj/obrazek1.png" style="width:100%">
+                    </div>
+
+                    <div class="slajdy">
+                        <div class="numertekst">2 / 6</div>
+                        <img src="zdj/obrazek2.png" style="width:100%">
+                    </div>
+
+                    <div class="slajdy">
+                        <div class="numertekst">3 / 6</div>
+                        <img src="zdj/obrazek3.png" style="width:100%">
+                    </div>
+
+                    <div class="slajdy">
+                        <div class="numertekst">4 / 6</div>
+                        <img src="zdj/obrazek4.png" style="width:100%">
+                    </div>
+
+                    <div class="slajdy">
+                        <div class="numertekst">5 / 6</div>
+                        <img src="zdj/obrazek5.png" style="width:100%">
+                    </div>
+
+                    <div class="slajdy">
+                        <div class="numertekst">6 / 6</div>
+                        <img src="zdj/obrazek6.png" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlajdy(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlajdy(1)">&#10095;</a>
+
+                    <div class = "tekst-container">
+                        <p id="napis"></p>
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <img class="demo cursor" src="zdj/obrazek1.png" style="width:100%" onclick="currentSlide(1)" alt="1">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="zdj/obrazek2.png" style="width:100%" onclick="currentSlide(2)" alt="2">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="zdj/obrazek3.png" style="width:100%" onclick="currentSlide(3)" alt="3">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="zdj/obrazek4.png" style="width:100%" onclick="currentSlide(4)" alt="4">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="zdj/obrazek5.png" style="width:100%" onclick="currentSlide(5)" alt="5">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="zdj/obrazek6.png" style="width:100%" onclick="currentSlide(6)" alt="6">
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+          </div>
+          <script>
+              var slajdIndeks = 1;
+              pokazSlajdy(slajdIndeks);
+
+              function plusSlajdy(n) {
+                  pokazSlajdy(slajdIndeks += n);
+              }
+              
+              function obecnySlajd(n) {
+                  pokazSlajdy(slajdIndeks = n);
+              }
+
+              function pokazSlajdy(n) {
+                  var i;
+                  var slajdy = document.getElementsByClassName("slajdy");
+                  var dots = document.getElementsByClassName("demo");
+                  var napis = document.getElementById("napis");
+                  
+                  if (n > slajdy.length) {slajdIndeks = 1}
+                  if (n < 1) {slajdIndeks = slajdy.length}
+
+                  for(i = 0; i < slajdy.length; i++) {
+                      slajdy[i].style.display = "none";
+                  }
+
+                  for(i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slajdy[slajdIndeks-1].style.display = "block";
+                  dots[slajdIndeks-1].className += " active";
+                  napis.innerHTML = dots[slajdIndeks-1].alt;
+              }
+          </script>
+</body>
