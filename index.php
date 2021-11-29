@@ -25,7 +25,7 @@ $wynik = $db->query("select * from klienci");
 </div>
 <div>
 <ul>
-  <li><a class="aktywny" href="#home">Strona główna</a></li>
+  <li><a class="aktywny" href="main.html">Strona główna</a></li>
   <li><a href="aktualnosci.html">Aktualności</a></li>
   <li><a href="#about">Galeria</a></li>
   <li><a href="kontakt.html">Kontakt</a></li>
